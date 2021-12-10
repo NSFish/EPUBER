@@ -1,0 +1,6 @@
+module PTSwift {
+  umbrella header "PTSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

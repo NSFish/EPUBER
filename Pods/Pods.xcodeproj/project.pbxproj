@@ -1,0 +1,793 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09E1AA7DD8C467122D90ABE35823F9D7 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A0AFEB9AA634E6811B2F6859645CE /* FileManager.swift */; };
+		1058A5C6544CA6244B9C7CB631F865C0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C8BCFD923AEC0DBDBCB3AAADC7C648 /* Utils.swift */; };
+		1E25EB2D3AC227F8482F175340818308 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3A34CB69FE65E4DE05443BDC69EAE4 /* String.swift */; };
+		26096645DAC81B8BCD44401751B040FB /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581B62317D54686E10EF3F2E34C4BE9 /* URL.swift */; };
+		4FF8761B1009F010C9B88877A8025755 /* ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EA3DB001F94C9BF0A52983463C2D57 /* ToString.swift */; };
+		7000F4F12748FF7900296731 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000F4F02748FF7900296731 /* Date.swift */; };
+		98E5D1C42864B735DD788BE4FD8DEB87 /* PTSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C2EF3E2B0D4290BA292CD7EA716F8EE /* PTSwift-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9A55AD63907082548C4F75D7241240A2 /* RegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB63E9A3459D33F80FF421171A9FEAC8 /* RegularExpression.swift */; };
+		9C875886765E5932E578B0B30C51AA47 /* SwiftyXML-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD61F556EF820FBBB162F85B36A86D6 /* SwiftyXML-dummy.m */; };
+		A54351006016254E8464E1AF9542C1F5 /* Pods-EPUBER-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 42229EB9FDC727088F155FE009F9A76A /* Pods-EPUBER-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B11068949FF3DCE3B92F7B9758C40C39 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034E986BFCC70BE4B3764A4A397F68F /* Array.swift */; };
+		B61FF589B5C6E15E5E40459B50E82ED8 /* SwiftyXML-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 051EAC1E604A7C9738C01083672CF27B /* SwiftyXML-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B7F82353385B9F795BAF555265ECBE7B /* PTSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F867B7FE657FA7D3101A03178FE1A4F /* PTSwift-dummy.m */; };
+		C86E3BBF323B764B8D86F231BB0A41D1 /* Pods-EPUBER-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCADCE2A8F225BEB1ED8BDFECBB1B39 /* Pods-EPUBER-dummy.m */; };
+		E1BB076CF3A1D2F307EE2FC6D88444DF /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88634AE1F3ED820F0E7DCD70A49E3E03 /* Int.swift */; };
+		F92021FD6F39F6BFE647F454DBE771CE /* CNNumberToArabicConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D8F5D73E34E580AC34ABB91830A8D /* CNNumberToArabicConverter.swift */; };
+		FA6590FA9D73637796E8F96D23A08B6E /* XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959159B27E29F720AC8A3F74F869EC8 /* XML.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2EE3ADE42C3DF2ACD698FBF0D423F66A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF1C802206A09889FA48F5A920AB2874;
+			remoteInfo = PTSwift;
+		};
+		D492050EC1BB8C4CE43B2B3EC3618F1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F304D1F524D1E7A76ED53A880EA94A26;
+			remoteInfo = SwiftyXML;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		051EAC1E604A7C9738C01083672CF27B /* SwiftyXML-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyXML-umbrella.h"; sourceTree = "<group>"; };
+		065A0AFEB9AA634E6811B2F6859645CE /* FileManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		0D3A34CB69FE65E4DE05443BDC69EAE4 /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		0D5057355B7667B97E4E7D1478079BBD /* PTSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PTSwift.release.xcconfig; sourceTree = "<group>"; };
+		1535210B69CCB31614B7FCCEB2043186 /* SwiftyXML-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyXML-prefix.pch"; sourceTree = "<group>"; };
+		15802D0F6CE90D5FF40E7AF7A1D774D2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		16DAF378308FFD9CBC8B42D686996E77 /* SwiftyXML.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyXML.debug.xcconfig; sourceTree = "<group>"; };
+		23E58E0446BC7448C8E245E711656AAE /* Pods-EPUBER.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EPUBER.modulemap"; sourceTree = "<group>"; };
+		2668CC99A2DE9953BF0CF4175007AF66 /* PTSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PTSwift-prefix.pch"; sourceTree = "<group>"; };
+		3F867B7FE657FA7D3101A03178FE1A4F /* PTSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PTSwift-dummy.m"; sourceTree = "<group>"; };
+		41C892514EC0B6EAB76C6E6ECC5D8772 /* SwiftyXML.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SwiftyXML.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		42229EB9FDC727088F155FE009F9A76A /* Pods-EPUBER-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EPUBER-umbrella.h"; sourceTree = "<group>"; };
+		4581B62317D54686E10EF3F2E34C4BE9 /* URL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		4849C7E4DAD97A1FE00D0E2B92DB696F /* Pods-EPUBER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EPUBER.debug.xcconfig"; sourceTree = "<group>"; };
+		4E2FC2D1DD304FB24BC979DD1CB9F6C7 /* libPTSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPTSwift.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		510D95B96744A197823661D49956264B /* libPods-EPUBER.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EPUBER.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56DA6AE6F3936600FC7D1CAD6D4168FF /* Pods-EPUBER-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EPUBER-acknowledgements.markdown"; sourceTree = "<group>"; };
+		58C83156414DF7D35BC4D9C4298C3771 /* libSwiftyXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSwiftyXML.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B579B69AC00B0D29190E346CD40DFF9 /* PTSwift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = PTSwift.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6C4D8F5D73E34E580AC34ABB91830A8D /* CNNumberToArabicConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CNNumberToArabicConverter.swift; path = Sources/PTSwift/CNNumberToArabicConverter.swift; sourceTree = "<group>"; };
+		6DCADCE2A8F225BEB1ED8BDFECBB1B39 /* Pods-EPUBER-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EPUBER-dummy.m"; sourceTree = "<group>"; };
+		7000F4F02748FF7900296731 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		74D8EC3632211B141D03F48652F0B5AC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8610EB9B32FB35AA481D80995BFEF826 /* PTSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PTSwift.modulemap; sourceTree = "<group>"; };
+		88634AE1F3ED820F0E7DCD70A49E3E03 /* Int.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		8C2EF3E2B0D4290BA292CD7EA716F8EE /* PTSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PTSwift-umbrella.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B292D42BD51E79077403BA0844869C89 /* SwiftyXML.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyXML.modulemap; sourceTree = "<group>"; };
+		B423B4519188EE7A5CBE3578243266C9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BF99A332E0E1E3936F4B038E5018578E /* SwiftyXML.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyXML.release.xcconfig; sourceTree = "<group>"; };
+		D034E986BFCC70BE4B3764A4A397F68F /* Array.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		D52AA22D237804472D3FF3888BC13199 /* Pods-EPUBER-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EPUBER-acknowledgements.plist"; sourceTree = "<group>"; };
+		D69C7C373A749A5B377E6264803B09D5 /* Pods-EPUBER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EPUBER.release.xcconfig"; sourceTree = "<group>"; };
+		D959159B27E29F720AC8A3F74F869EC8 /* XML.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XML.swift; path = Sources/SwiftyXML/XML.swift; sourceTree = "<group>"; };
+		D9EA3DB001F94C9BF0A52983463C2D57 /* ToString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ToString.swift; sourceTree = "<group>"; };
+		E09C8BE3D05A4CAA971E86D8EFBE7C97 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E4C8BCFD923AEC0DBDBCB3AAADC7C648 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Sources/PTSwift/Utils.swift; sourceTree = "<group>"; };
+		EB63E9A3459D33F80FF421171A9FEAC8 /* RegularExpression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegularExpression.swift; sourceTree = "<group>"; };
+		EFD61F556EF820FBBB162F85B36A86D6 /* SwiftyXML-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyXML-dummy.m"; sourceTree = "<group>"; };
+		FF11AAF2F580292A3A45639634C7410D /* PTSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PTSwift.debug.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57A2C8B38565F872195445AE9D0AECF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2FA75963D8B9EE84387DE0A47B4342 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DCE19D99003E5BE46073A2C4BE34935 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0081B85B9A0F1AA725CF8C2CD1FF2EB0 /* SwiftyXML */ = {
+			isa = PBXGroup;
+			children = (
+				D959159B27E29F720AC8A3F74F869EC8 /* XML.swift */,
+				BE0DEAAE768CB1FEE09FE541EB056251 /* Pod */,
+				D8B4C491459427D5260B2ACC0C6191CC /* Support Files */,
+			);
+			name = SwiftyXML;
+			path = ../../SwiftyXML;
+			sourceTree = "<group>";
+		};
+		02FB4E8D59A3BB55A40B358A91829E70 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				15802D0F6CE90D5FF40E7AF7A1D774D2 /* LICENSE */,
+				6B579B69AC00B0D29190E346CD40DFF9 /* PTSwift.podspec */,
+				74D8EC3632211B141D03F48652F0B5AC /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		04F87460A44B210E5918E0F53E12E330 /* PTSwift */ = {
+			isa = PBXGroup;
+			children = (
+				6C4D8F5D73E34E580AC34ABB91830A8D /* CNNumberToArabicConverter.swift */,
+				E4C8BCFD923AEC0DBDBCB3AAADC7C648 /* Utils.swift */,
+				5BEC2C83F35A996AF14A8BA341ADB284 /* Foundation */,
+				02FB4E8D59A3BB55A40B358A91829E70 /* Pod */,
+				C79A8C18BCBCE17535AEC44264991704 /* Support Files */,
+			);
+			name = PTSwift;
+			path = ../../PTSwift;
+			sourceTree = "<group>";
+		};
+		4CBD4C70D37FA2D3B0F64DBE1A5F09DC /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A11B3A9E9B5B07961B83BAA2B64F0C2C /* Pods-EPUBER */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5BEC2C83F35A996AF14A8BA341ADB284 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				D034E986BFCC70BE4B3764A4A397F68F /* Array.swift */,
+				065A0AFEB9AA634E6811B2F6859645CE /* FileManager.swift */,
+				88634AE1F3ED820F0E7DCD70A49E3E03 /* Int.swift */,
+				EB63E9A3459D33F80FF421171A9FEAC8 /* RegularExpression.swift */,
+				0D3A34CB69FE65E4DE05443BDC69EAE4 /* String.swift */,
+				D9EA3DB001F94C9BF0A52983463C2D57 /* ToString.swift */,
+				4581B62317D54686E10EF3F2E34C4BE9 /* URL.swift */,
+				7000F4F02748FF7900296731 /* Date.swift */,
+			);
+			name = Foundation;
+			path = Sources/PTSwift/Foundation;
+			sourceTree = "<group>";
+		};
+		7047A200E4C85C150BF4653FFF7A917F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				510D95B96744A197823661D49956264B /* libPods-EPUBER.a */,
+				4E2FC2D1DD304FB24BC979DD1CB9F6C7 /* libPTSwift.a */,
+				58C83156414DF7D35BC4D9C4298C3771 /* libSwiftyXML.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A11B3A9E9B5B07961B83BAA2B64F0C2C /* Pods-EPUBER */ = {
+			isa = PBXGroup;
+			children = (
+				23E58E0446BC7448C8E245E711656AAE /* Pods-EPUBER.modulemap */,
+				56DA6AE6F3936600FC7D1CAD6D4168FF /* Pods-EPUBER-acknowledgements.markdown */,
+				D52AA22D237804472D3FF3888BC13199 /* Pods-EPUBER-acknowledgements.plist */,
+				6DCADCE2A8F225BEB1ED8BDFECBB1B39 /* Pods-EPUBER-dummy.m */,
+				42229EB9FDC727088F155FE009F9A76A /* Pods-EPUBER-umbrella.h */,
+				4849C7E4DAD97A1FE00D0E2B92DB696F /* Pods-EPUBER.debug.xcconfig */,
+				D69C7C373A749A5B377E6264803B09D5 /* Pods-EPUBER.release.xcconfig */,
+			);
+			name = "Pods-EPUBER";
+			path = "Target Support Files/Pods-EPUBER";
+			sourceTree = "<group>";
+		};
+		B8001C40776790DED8DA27132C8D5795 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04F87460A44B210E5918E0F53E12E330 /* PTSwift */,
+				0081B85B9A0F1AA725CF8C2CD1FF2EB0 /* SwiftyXML */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		BE0DEAAE768CB1FEE09FE541EB056251 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				E09C8BE3D05A4CAA971E86D8EFBE7C97 /* LICENSE */,
+				B423B4519188EE7A5CBE3578243266C9 /* README.md */,
+				41C892514EC0B6EAB76C6E6ECC5D8772 /* SwiftyXML.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		C79A8C18BCBCE17535AEC44264991704 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8610EB9B32FB35AA481D80995BFEF826 /* PTSwift.modulemap */,
+				3F867B7FE657FA7D3101A03178FE1A4F /* PTSwift-dummy.m */,
+				2668CC99A2DE9953BF0CF4175007AF66 /* PTSwift-prefix.pch */,
+				8C2EF3E2B0D4290BA292CD7EA716F8EE /* PTSwift-umbrella.h */,
+				FF11AAF2F580292A3A45639634C7410D /* PTSwift.debug.xcconfig */,
+				0D5057355B7667B97E4E7D1478079BBD /* PTSwift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../EPUBER/Pods/Target Support Files/PTSwift";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				B8001C40776790DED8DA27132C8D5795 /* Development Pods */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
+				7047A200E4C85C150BF4653FFF7A917F /* Products */,
+				4CBD4C70D37FA2D3B0F64DBE1A5F09DC /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8B4C491459427D5260B2ACC0C6191CC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B292D42BD51E79077403BA0844869C89 /* SwiftyXML.modulemap */,
+				EFD61F556EF820FBBB162F85B36A86D6 /* SwiftyXML-dummy.m */,
+				1535210B69CCB31614B7FCCEB2043186 /* SwiftyXML-prefix.pch */,
+				051EAC1E604A7C9738C01083672CF27B /* SwiftyXML-umbrella.h */,
+				16DAF378308FFD9CBC8B42D686996E77 /* SwiftyXML.debug.xcconfig */,
+				BF99A332E0E1E3936F4B038E5018578E /* SwiftyXML.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../EPUBER/Pods/Target Support Files/SwiftyXML";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		449B5475BE80B46EADA80F1A041FA40F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A54351006016254E8464E1AF9542C1F5 /* Pods-EPUBER-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EE439FB3679D07D4E4AF45BBDEBC9A1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98E5D1C42864B735DD788BE4FD8DEB87 /* PTSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BA45C4AD835B3CF2D07378837DAD1A3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B61FF589B5C6E15E5E40459B50E82ED8 /* SwiftyXML-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AF1C802206A09889FA48F5A920AB2874 /* PTSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85DCAA0589DF5F4ACE27958A41CE9C10 /* Build configuration list for PBXNativeTarget "PTSwift" */;
+			buildPhases = (
+				5EE439FB3679D07D4E4AF45BBDEBC9A1 /* Headers */,
+				9A552CC284B3F7CE23AF6DCBCD43CAC4 /* Sources */,
+				8DCE19D99003E5BE46073A2C4BE34935 /* Frameworks */,
+				1FD24CBB8E3F3A9EA8F627C5E8E25EFF /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PTSwift;
+			productName = PTSwift;
+			productReference = 4E2FC2D1DD304FB24BC979DD1CB9F6C7 /* libPTSwift.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DABFF7A92444A17BB13075B93D6091B0 /* Pods-EPUBER */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4B6874FE6092255655D618AF15F3607 /* Build configuration list for PBXNativeTarget "Pods-EPUBER" */;
+			buildPhases = (
+				449B5475BE80B46EADA80F1A041FA40F /* Headers */,
+				4131C6BB1A3EA2F4B54A31DF7056AA82 /* Sources */,
+				57A2C8B38565F872195445AE9D0AECF6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E40F587FD375C12D308D1A0ECE78BBA6 /* PBXTargetDependency */,
+				F99A8D6BBC5B322ECC5376FAA8A186DD /* PBXTargetDependency */,
+			);
+			name = "Pods-EPUBER";
+			productName = "Pods-EPUBER";
+			productReference = 510D95B96744A197823661D49956264B /* libPods-EPUBER.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F304D1F524D1E7A76ED53A880EA94A26 /* SwiftyXML */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3886313E1834003169E2602C1E23A4D /* Build configuration list for PBXNativeTarget "SwiftyXML" */;
+			buildPhases = (
+				9BA45C4AD835B3CF2D07378837DAD1A3 /* Headers */,
+				158D59BEEF36B6EBE685FCF3F07321D1 /* Sources */,
+				5A2FA75963D8B9EE84387DE0A47B4342 /* Frameworks */,
+				2CC33EB41E1560C3DD3DE9593EA0367F /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyXML;
+			productName = SwiftyXML;
+			productReference = 58C83156414DF7D35BC4D9C4298C3771 /* libSwiftyXML.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1310;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 7047A200E4C85C150BF4653FFF7A917F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DABFF7A92444A17BB13075B93D6091B0 /* Pods-EPUBER */,
+				AF1C802206A09889FA48F5A920AB2874 /* PTSwift */,
+				F304D1F524D1E7A76ED53A880EA94A26 /* SwiftyXML */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FD24CBB8E3F3A9EA8F627C5E8E25EFF /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/PTSwift/PTSwift.modulemap",
+				"${PODS_ROOT}/Headers/Public/PTSwift/PTSwift-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/PTSwift-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/PTSwift/PTSwift.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/PTSwift/PTSwift-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+		};
+		2CC33EB41E1560C3DD3DE9593EA0367F /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/SwiftyXML/SwiftyXML.modulemap",
+				"${PODS_ROOT}/Headers/Public/SwiftyXML/SwiftyXML-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/SwiftyXML-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftyXML/SwiftyXML.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftyXML/SwiftyXML-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		158D59BEEF36B6EBE685FCF3F07321D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C875886765E5932E578B0B30C51AA47 /* SwiftyXML-dummy.m in Sources */,
+				FA6590FA9D73637796E8F96D23A08B6E /* XML.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4131C6BB1A3EA2F4B54A31DF7056AA82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C86E3BBF323B764B8D86F231BB0A41D1 /* Pods-EPUBER-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A552CC284B3F7CE23AF6DCBCD43CAC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B11068949FF3DCE3B92F7B9758C40C39 /* Array.swift in Sources */,
+				F92021FD6F39F6BFE647F454DBE771CE /* CNNumberToArabicConverter.swift in Sources */,
+				09E1AA7DD8C467122D90ABE35823F9D7 /* FileManager.swift in Sources */,
+				E1BB076CF3A1D2F307EE2FC6D88444DF /* Int.swift in Sources */,
+				B7F82353385B9F795BAF555265ECBE7B /* PTSwift-dummy.m in Sources */,
+				9A55AD63907082548C4F75D7241240A2 /* RegularExpression.swift in Sources */,
+				1E25EB2D3AC227F8482F175340818308 /* String.swift in Sources */,
+				4FF8761B1009F010C9B88877A8025755 /* ToString.swift in Sources */,
+				7000F4F12748FF7900296731 /* Date.swift in Sources */,
+				26096645DAC81B8BCD44401751B040FB /* URL.swift in Sources */,
+				1058A5C6544CA6244B9C7CB631F865C0 /* Utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E40F587FD375C12D308D1A0ECE78BBA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PTSwift;
+			target = AF1C802206A09889FA48F5A920AB2874 /* PTSwift */;
+			targetProxy = 2EE3ADE42C3DF2ACD698FBF0D423F66A /* PBXContainerItemProxy */;
+		};
+		F99A8D6BBC5B322ECC5376FAA8A186DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyXML;
+			target = F304D1F524D1E7A76ED53A880EA94A26 /* SwiftyXML */;
+			targetProxy = D492050EC1BB8C4CE43B2B3EC3618F1E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1F7EE59F366B48008D6121344E6305B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4849C7E4DAD97A1FE00D0E2B92DB696F /* Pods-EPUBER.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-EPUBER/Pods-EPUBER.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A1BE8AB0A8A36F9C583916AFA3A6F4EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16DAF378308FFD9CBC8B42D686996E77 /* SwiftyXML.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyXML/SwiftyXML-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = Headers/Public/SwiftyXML/SwiftyXML.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SwiftyXML;
+				PRODUCT_NAME = SwiftyXML;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A734648D21C485124F4CA7866CB7B37C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		AC0274AB8127159D6B0B095D69F5E8AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D69C7C373A749A5B377E6264803B09D5 /* Pods-EPUBER.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-EPUBER/Pods-EPUBER.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BDEAA43553D688513751CF7A7AB60511 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D5057355B7667B97E4E7D1478079BBD /* PTSwift.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/PTSwift/PTSwift-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = Headers/Public/PTSwift/PTSwift.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = PTSwift;
+				PRODUCT_NAME = PTSwift;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D7C18A4BB3A23E3E9BD431BC6F0C4001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E1CDCD9D6B22CE8257C2C80CD87973A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF99A332E0E1E3936F4B038E5018578E /* SwiftyXML.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyXML/SwiftyXML-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = Headers/Public/SwiftyXML/SwiftyXML.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SwiftyXML;
+				PRODUCT_NAME = SwiftyXML;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F88F661DFAC7787C4502C3A368D3A3C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF11AAF2F580292A3A45639634C7410D /* PTSwift.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/PTSwift/PTSwift-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = Headers/Public/PTSwift/PTSwift.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = PTSwift;
+				PRODUCT_NAME = PTSwift;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A734648D21C485124F4CA7866CB7B37C /* Debug */,
+				D7C18A4BB3A23E3E9BD431BC6F0C4001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85DCAA0589DF5F4ACE27958A41CE9C10 /* Build configuration list for PBXNativeTarget "PTSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F88F661DFAC7787C4502C3A368D3A3C4 /* Debug */,
+				BDEAA43553D688513751CF7A7AB60511 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3886313E1834003169E2602C1E23A4D /* Build configuration list for PBXNativeTarget "SwiftyXML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1BE8AB0A8A36F9C583916AFA3A6F4EC /* Debug */,
+				E1CDCD9D6B22CE8257C2C80CD87973A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4B6874FE6092255655D618AF15F3607 /* Build configuration list for PBXNativeTarget "Pods-EPUBER" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F7EE59F366B48008D6121344E6305B4 /* Debug */,
+				AC0274AB8127159D6B0B095D69F5E8AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

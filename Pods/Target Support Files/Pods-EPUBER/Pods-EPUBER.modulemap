@@ -1,0 +1,6 @@
+module Pods_EPUBER {
+  umbrella header "Pods-EPUBER-umbrella.h"
+
+  export *
+  module * { export * }
+}
