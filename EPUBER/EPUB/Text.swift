@@ -42,7 +42,7 @@ class Text {
     
     func polish() {
         var chapters = [Chapter]()
-
+        
         chapterFileURLs.forEach {
             chapters.append(polishChapter(at: $0))
         }
@@ -58,7 +58,7 @@ private extension Text {
         
         // 过滤掉一些存在特定 css 规则的文件，比如《诡秘之主》的章节分隔页
         let shouldIgnoreCertainCSSRules = content.matches(with: "第[\\S]*(卷|部)").count > 0
-                
+        
         // css 文件位置
         var regex = RE.init("<link rel=\"stylesheet\"(.|\n)*css\"/>")
         let css = "<link rel=\"stylesheet\" href=\"" + cssFilePosition + "\" type=\"text/css\"/>"
@@ -79,7 +79,7 @@ private extension Text {
         if !shouldIgnoreCertainCSSRules {
             regex = RE.init("<h2.*?>(<span.*?>)*(?=(第[\\S]*(卷|部)))")
             content = regex.stringByReplacingMatches(in: content, withTemplate: "<h2 class=\"volumn-title\">")
-        
+            
             regex = RE.init("</.*h2>")
             content = regex.stringByReplacingMatches(in: content, withTemplate: "</h2>")
         }
@@ -103,12 +103,19 @@ private extension Text {
         content = regex.stringByReplacingMatches(in: content, withTemplate: "")
         
         // 提取章节名供后续 toc.ncx 处使用
-        let match = content.firstMatch(with: "(?<=(\">)).*?(?=(</))")
-        let title = match?.value ?? ""
-        
-        // 统一 title
-        regex = RE.init("(?<=<title>)(.|\n)*(?=</title>)")
-        content = regex.stringByReplacingMatches(in: content, withTemplate: title)
+        var title = ""
+        if shouldIgnoreCertainCSSRules {
+            let match = content.firstMatch(with: "(?<=(<title>)).*?(?=(</))")
+            title = match?.value ?? ""
+        }
+        else {
+            let match = content.firstMatch(with: "(?<=(\">)).*?(?=(</))")
+            title = match?.value ?? ""
+            
+            // 统一 title
+            regex = RE.init("(?<=<title>)(.|\n)*(?=</title>)")
+            content = regex.stringByReplacingMatches(in: content, withTemplate: title)
+        }
         
         try! content.write(to: url, atomically: false, encoding: .utf8)
         
@@ -162,7 +169,7 @@ private extension Text {
                 else if i == volumns.count - 1 {
                     let start = volumn.index + 1
                     let end = chapters.endIndex
-
+                    
                     volumn.chapters = Array(chapters[start..<end])
                 }
             }
