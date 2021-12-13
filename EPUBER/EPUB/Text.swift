@@ -55,6 +55,9 @@ private extension Text {
     
     func polishChapter(at url: URL) -> Chapter {
         var content = try! String.init(contentsOf: url).replacingOccurrences(of: "\r\n", with: "\n")
+        
+        // 过滤掉一些存在特定 css 规则的文件，比如《诡秘之主》的章节分隔页
+        let shouldIgnoreCertainCSSRules = content.matches(with: "第[\\S]*(卷|部)").count > 0
                 
         // css 文件位置
         var regex = RE.init("<link rel=\"stylesheet\"(.|\n)*css\"/>")
@@ -73,11 +76,13 @@ private extension Text {
         content = regex.stringByReplacingMatches(in: content, withTemplate: "</span></h2>")
         
         // 将”第N卷“的样式和章节标题区分开
-        regex = RE.init("<h2.*?>(<span.*?>)*(?=(第[\\S]*(卷|部)))")
-        content = regex.stringByReplacingMatches(in: content, withTemplate: "<h2 class=\"volumn-title\">")
+        if !shouldIgnoreCertainCSSRules {
+            regex = RE.init("<h2.*?>(<span.*?>)*(?=(第[\\S]*(卷|部)))")
+            content = regex.stringByReplacingMatches(in: content, withTemplate: "<h2 class=\"volumn-title\">")
         
-        regex = RE.init("</.*h2>")
-        content = regex.stringByReplacingMatches(in: content, withTemplate: "</h2>")
+            regex = RE.init("</.*h2>")
+            content = regex.stringByReplacingMatches(in: content, withTemplate: "</h2>")
+        }
         
         // 移除 p 的样式和可能存在的空格
         regex = RE.init("<p.*?>[\\s]*")
@@ -88,8 +93,10 @@ private extension Text {
         content = regex.stringByReplacingMatches(in: content, withTemplate: "<div>")
         
         // 移除 body 的样式
-        regex = RE.init("<body.*?>")
-        content = regex.stringByReplacingMatches(in: content, withTemplate: "<body>")
+        if !shouldIgnoreCertainCSSRules {
+            regex = RE.init("<body.*?>")
+            content = regex.stringByReplacingMatches(in: content, withTemplate: "<body>")
+        }
         
         // 移除 h1 的样式(目前见到的是将卷名加到章节里)
         regex = RE.init("<h1.*</h1>\n")

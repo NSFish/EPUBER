@@ -56,7 +56,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = " /Users/nsfish/Downloads/d"
+            argument = " /Users/nsfish/Downloads/a"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -64,7 +64,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/nsfish/Documents/Github/EPUBER/Resources/style.css"
+            argument = "/Users/nsfish/Downloads/style.css"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

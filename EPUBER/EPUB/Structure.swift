@@ -23,6 +23,7 @@ class Structure {
     private(set) var OEBPSFolderURL: URL!
     private(set) var contentOPFURL: URL!
     private(set) var tocNCXURL: URL!
+    private(set) var imageURLs = [URL]()
     private(set) var coverFileURL: URL!
     private(set) var chapterFileURLs = [URL]()
     
@@ -96,7 +97,7 @@ private extension Structure {
         // css
         FM.copyItem(at: cssFileURL, toFolder: OEBPSFolderURL)
         
-        // content.opf、toc.ncx 和 cover.jpg
+        // content.opf、toc.ncx
         guard let contentOPFURL = contents.filter({ $0.pathExtension.lowercased() == "opf" }).first else {
             return
         }
@@ -107,9 +108,16 @@ private extension Structure {
         }
         self.tocNCXURL = FM.copyItem(at: tocNCXURL, toFolder: OEBPSFolderURL)
         
-        guard let coverJPGURL = contents.filter({ $0.pathExtension.lowercased() == "jpg"
-            || $0.pathExtension.lowercased() == "jpeg"
-        }).first else {
+        // 图片单独存入 Image/ 中
+        let imageFolder = OEBPSFolderURL.appendingPathComponent("Image")
+        FM.createFolder(at: imageFolder)
+        
+        let imageURLs = contents.filter { $0.pathExtension.lowercased() == "jpg" || $0.pathExtension.lowercased() == "jpeg" }
+        self.imageURLs = imageURLs.filter { !$0.nameWithoutExtension().lowercased().contains("cover") }
+        self.imageURLs = FM.copy(items: self.imageURLs, toFolder: imageFolder)
+        
+        // 封面不放入 Image/ 中
+        guard let coverJPGURL = imageURLs.filter({ $0.nameWithoutExtension().lowercased().contains("cover") }).first else {
             return
         }
         self.coverFileURL = FM.copyItem(at: coverJPGURL, toFolder: OEBPSFolderURL)

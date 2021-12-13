@@ -38,6 +38,7 @@ let contentOPF = ContentOPF.init(url: structure.contentOPFURL,
                                  tocNCXFileName: structure.tocNCXURL.lastPathComponent,
                                  cssFileName: structure.cssFileURL.lastPathComponent,
                                  coverFileName: structure.coverFileURL.lastPathComponent,
+                                 imageURLs: structure.imageURLs,
                                  chapterFileURLs: structure.chapterFileURLs)
 contentOPF.polish()
 

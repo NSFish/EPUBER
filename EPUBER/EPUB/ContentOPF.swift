@@ -52,15 +52,17 @@ class ContentOPF {
     let tocNCXFileName: String
     let cssFileName: String
     let coverFileName: String
+    let imageURLs: [URL]
     let chapterFileURLs: [URL]
     
     private var xml: XML
     
-    init(url: URL, tocNCXFileName: String, cssFileName: String, coverFileName: String, chapterFileURLs: [URL]) {
+    init(url: URL, tocNCXFileName: String, cssFileName: String, coverFileName: String, imageURLs: [URL], chapterFileURLs: [URL]) {
         self.url = url
         self.tocNCXFileName = tocNCXFileName
         self.cssFileName = cssFileName
         self.coverFileName = coverFileName
+        self.imageURLs = imageURLs
         self.chapterFileURLs = chapterFileURLs
         
         xml = XML.init(url: url)!
@@ -112,6 +114,13 @@ private extension ContentOPF {
 
         let coverImageItem = ManifestItem.init(id: "cover-image", href: self.coverFileName, mediaType: "image/jpeg")
         newManifestXML.addChild(coverImageItem.toXML())
+        
+        for imageURL in imageURLs {
+            let fileName = imageURL.lastPathComponent
+            let imageItem = ManifestItem.init(id: fileName, href: "Image/" + fileName, mediaType: "image/jpeg")
+
+            newManifestXML.addChild(imageItem.toXML())
+        }
         
         let digits = String(chapterFileURLs.count).count
         for (index, chapterFileURL) in chapterFileURLs.enumerated() {
