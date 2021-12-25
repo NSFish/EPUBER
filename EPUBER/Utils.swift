@@ -43,7 +43,7 @@ func zip(_ items: [URL], fileName: String, into folder: URL) {
     task.waitUntilExit()
     
     let destURL = folder.appendingPathComponent(fileName)
-    if FM.exist(atURL: destURL, isDirectory: false) {
+    if FM.itemExist(atURL: destURL, type: .file) {
         try! FM.removeItem(at: destURL)
     }
     try! FM.moveItem(at: tempFolder.appendingPathComponent(fileName), to: destURL)
