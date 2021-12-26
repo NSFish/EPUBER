@@ -12,7 +12,7 @@ class Structure {
     
     private let epubURL: URL
     let cssFileURL: URL
-    let uselessFileNames: [String]
+    let ignoredFileNames: [String]
     
     let cssFilePosition = "../style.css"
     let epubNameWithoutExtension: String
@@ -27,10 +27,10 @@ class Structure {
     private(set) var coverFileURL: URL!
     private(set) var chapterFileURLs = [URL]()
     
-    init(epubURL: URL, cssFileURL: URL, uselessFileNames: [String]) {
+    init(epubURL: URL, cssFileURL: URL, ignoredFileNames: [String]) {
         self.epubURL = epubURL
         self.cssFileURL = cssFileURL
-        self.uselessFileNames = uselessFileNames
+        self.ignoredFileNames = ignoredFileNames
         self.epubNameWithoutExtension = epubURL.nameWithoutExtension()
     }
     
@@ -53,9 +53,17 @@ class Structure {
         createTempEpubFolder(in: tempFolderURL)
     }
     
-    func generate() {
-        let contents = FM.contentsIn(folder: tempEpubFolderURL)
-        zip(contents, fileName: "new_" + epubNameWithoutExtension + ".epub", into: epubURL.deletingLastPathComponent())
+    func generate(shouldZipUp: Bool = true) {
+        let dstFolder = epubURL.deletingLastPathComponent()
+        let newFileName = "new_" + epubNameWithoutExtension
+        
+        if shouldZipUp {
+            let contents = FM.contentsIn(folder: tempEpubFolderURL)
+            zip(contents, fileName: newFileName + ".epub", into: dstFolder)
+        }
+        else {
+            try! FM.copyItem(at: tempEpubFolderURL, to: dstFolder.appendingPathComponent(newFileName))
+        }
         
         try! FM.removeItem(at: tempFolderURL)
     }
@@ -89,7 +97,7 @@ private extension Structure {
         
         // 构造 OEBPS 文件夹，并将需要的文件复制进来
         let contents = try! FM.nestedFilesIn(folder: epubFolderURL, level: 3)
-            .filter { !uselessFileNames.contains($0.lastPathComponent) }
+            .filter { !ignoredFileNames.contains($0.lastPathComponent) }
         
         OEBPSFolderURL = tempEpubFolderURL.appendingPathComponent("OEBPS")
         FM.createFolder(at: OEBPSFolderURL)
