@@ -59,6 +59,9 @@ private extension Text {
         // ”第N卷““第N部”的样式需要和“第N章”区分开
         var isVolumn = false
         // 只匹配单行
+        // match.value.count > 0 表示确实匹配到了
+        // $0.value.count < 10 表示匹配到的内容不会太长
+        // 比如"第十八卷"是 OK 的，“第二天我们走了一天路，XXXXXXX到达了城郊结合部”是不行的
         var regex = RE(#">第[\S]*(卷|部)"#, options: [])
         isVolumn = content.matches(with: regex).filter( { $0.value.count > 0 && $0.value.count < 10 }).count > 0
         
