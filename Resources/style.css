@@ -1,29 +1,32 @@
 h2 {
-  display: block;
-  font-size: 1.8em;
-  line-height: 120%;
-  text-align: justify;
-  padding: 5px 0 15px 0;
+    display: block;
+    font-size: 1.8em;
+    line-height: 120%;
+    text-align: justify;
+    padding: 5px 0 15px 0;
 }
+
 p {
-  display: block;
-  font-size: 1.15em;
-  line-height: 1.25em;
-  text-align: justify;
-  text-indent: 2em;
-  margin: 0.3em 0 0.3em 0;
-  padding: 0;
+    display: block;
+    font-size: 1.15em;
+    line-height: 1.25em;
+    text-align: justify;
+    text-indent: 2em;
+    margin: 0.3em 0 0.3em 0;
+    padding: 0;
 }
+
 .title-bottom-line {
-  border-bottom:1px solid;
+    border-bottom: 1px solid;
 }
+
 .volumn-title {
-      margin-top: 35%;
-      border-style: none solid none none;
-      border-width: 30px;
-      border-color: #4E594D;
-      padding: 30px 5px 5px 5px;
-      font-size: x-large;
-      line-height: 125%;
-      text-align: right;
+    margin-top: 35%;
+    border-style: none solid none none;
+    border-width: 30px;
+    border-color: #4E594D;
+    padding: 30px 5px 5px 5px;
+    font-size: x-large;
+    line-height: 125%;
+    text-align: right;
 }

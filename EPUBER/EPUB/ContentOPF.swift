@@ -93,7 +93,7 @@ class ContentOPF {
         polishManifest(in: newXML)
         polishSpine(in: newXML)
         
-        let xmlHead = "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?>"
+        let xmlHead = #"<?xml version="1.0" encoding="UTF-8" standalone="no"?>"#
         let result = xmlHead + "\n" + newXML.toXMLString()
         try! result.write(to: url, atomically: false, encoding: .utf8)
     }

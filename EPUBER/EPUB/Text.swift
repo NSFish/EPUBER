@@ -56,37 +56,39 @@ private extension Text {
     func polishChapter(at url: URL) -> Chapter {
         var content = try! String(contentsOf: url).replacingOccurrences(of: "\r\n", with: "\n")
         
-        // 过滤掉一些存在特定 css 规则的文件，比如《诡秘之主》的章节分隔页
-        var regex = RE("第[\\S]*(卷|部)")
-        let shouldIgnoreCertainCSSRules = content.matches(with: regex).count > 0
+        // ”第N卷““第N部”的样式需要和“第N章”区分开
+        var isVolumn = false
+        // 只匹配单行
+        var regex = RE(#">第[\S]*(卷|部)"#, options: [])
+        isVolumn = content.matches(with: regex).filter( { $0.value.count > 0 && $0.value.count < 10 }).count > 0
         
         // css 文件位置
-        regex = RE("<link rel=\"stylesheet\"(.|\n)*css\"/>")
-        let css = "<link rel=\"stylesheet\" href=\"" + cssFilePosition + "\" type=\"text/css\"/>"
+        regex = RE(#"<link rel="stylesheet"[\s\S]*css"/>"#)
+        let css = #"<link rel="stylesheet" href=""# + cssFilePosition + #"" type="text/css"/>"#
         content = content.replacingMatches(of: regex, with: css)
         
         // 清除内置 css 规则
-        regex = RE("[\\s]{0,2}<style(.|\n)*/style>")
+        regex = RE(#"[\s]{0,2}<style[\s\S]*/style>"#)
         content = content.replacingMatches(of: regex, with: "")
 
         // 统一标题 h2 样式
         regex = RE("<h2.*?>(<span.*?>)*")
-        content = content.replacingMatches(of: regex, with: "<h2><span class=\"title-bottom-line\">")
-
-        regex = RE("</.*h2>")
+        content = content.replacingMatches(of: regex, with: #"<h2><span class="title-bottom-line">"#)
+        
+        regex = RE(#"</.*h2>"#)
         content = content.replacingMatches(of: regex, with: "</span></h2>")
         
-        // 将”第N卷“的样式和章节标题区分开
-        if !shouldIgnoreCertainCSSRules {
-            regex = RE("<h2.*?>(<span.*?>)*(?=(第[\\S]*(卷|部)))")
-            content = content.replacingMatches(of: regex, with: "<h2 class=\"volumn-title\">")
+        // 将”第N卷““第N部”的样式和“第N章”区分开
+        if isVolumn {
+            regex = RE(#"<h2.*?>(<span.*?>)*(?=(第[\S]*(卷|部)))"#)
+            content = content.replacingMatches(of: regex, with: #"<h2 class="volumn-title">"#)
 
             regex = RE("</.*h2>")
             content = content.replacingMatches(of: regex, with: "</h2>")
         }
         
         // 移除 p 的样式和可能存在的空格
-        regex = RE("<p.*?>[\\s]*")
+        regex = RE(#"<p.*?>[\s]*"#)
         content = content.replacingMatches(of: regex, with: "<p>")
         
         // 移除 div 的样式
@@ -94,29 +96,29 @@ private extension Text {
         content = content.replacingMatches(of: regex, with: "<div>")
         
         // 移除 body 的样式
-        if !shouldIgnoreCertainCSSRules {
+        if !isVolumn {
             regex = RE("<body.*?>")
             content = content.replacingMatches(of: regex, with: "<body>")
         }
         
-        // 移除 h1 的样式(目前见到的是将卷名加到章节里)
+        // 移除 h1 (目前见到的是将卷名加到章节里)
         regex = RE("<h1.*</h1>\n")
         content = content.replacingMatches(of: regex, with: "")
         
-        // 提取章节名供后续 toc.ncx 处使用
+        // 提取卷/部名或章节名供后续 toc.ncx 处使用
         var title = ""
-        if shouldIgnoreCertainCSSRules {
+        if isVolumn {
             regex = RE("(?<=(<title>)).*?(?=(</))")
             let match = content.firstMatch(with: regex)
             title = match?.value ?? ""
         }
         else {
-            regex = RE("(?<=(\">)).*?(?=(</))")
+            regex = RE(#"(?<=(">)).*?(?=(</))"#)
             let match = content.firstMatch(with: regex)
             title = match?.value ?? ""
             
             // 统一 title
-            regex = RE("(?<=<title>)(.|\n)*(?=</title>)")
+            regex = RE(#"(?<=<title>)[\s\S]*(?=</title>)"#)
             content = content.replacingMatches(of: regex, with: title)
         }
         
@@ -144,10 +146,10 @@ private extension Text {
                 volumns.append(volumn)
             }
             
-            if let match = title.firstMatch(with: RE("第\\S*(卷|部)(\\s.+)*")), match.value == title {
+            if let match = title.firstMatch(with: RE(#"第\S*(卷|部)(\s.+)*"#)), match.value == title {
                 createVolumn()
             }
-            else if let match = title.firstMatch(with: RE("番外(\\s.+)*")), match.value == title {
+            else if let match = title.firstMatch(with: RE(#"番外(\s.+)*"#)), match.value == title {
                 createVolumn()
             }
         }

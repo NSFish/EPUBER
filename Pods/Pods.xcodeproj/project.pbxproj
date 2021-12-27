@@ -15,7 +15,6 @@
 		963B3434E9B9994398ADF6E51DEAC615 /* PTSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD94981FB01E4BA8ACB1C4E9D343230F /* PTSwift-dummy.m */; };
 		9C875886765E5932E578B0B30C51AA47 /* SwiftyXML-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5E96D66B02242896BD48109C591AB1 /* SwiftyXML-dummy.m */; };
 		A54351006016254E8464E1AF9542C1F5 /* Pods-EPUBER-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 42229EB9FDC727088F155FE009F9A76A /* Pods-EPUBER-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AAE40A2CF2E6D8BB3EFAA064BA5351BB /* RegularExpressionPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79236A4D19C846F158E3CBB30145397 /* RegularExpressionPattern.swift */; };
 		B61FF589B5C6E15E5E40459B50E82ED8 /* SwiftyXML-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D748A56150B3638E073E17192148A44 /* SwiftyXML-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BD76EE34DF58BF2E2D60C93DE1686D53 /* ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2D302216CFB1E2142180A5723E0F32 /* ToString.swift */; };
 		C641A1F8D09FF95C7F223C5DDABA4DBF /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75296CC31962A42C7BB222103582152A /* Enum.swift */; };
@@ -77,7 +76,6 @@
 		AB5E96D66B02242896BD48109C591AB1 /* SwiftyXML-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyXML-dummy.m"; sourceTree = "<group>"; };
 		B163793AF534B490BB7D01C557D99FDB /* FileManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		B2DEC3AA918A1A6CAC1B996C09AA17CF /* CNNumberToArabicConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CNNumberToArabicConverter.swift; path = Sources/PTSwift/CNNumberToArabicConverter.swift; sourceTree = "<group>"; };
-		B79236A4D19C846F158E3CBB30145397 /* RegularExpressionPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegularExpressionPattern.swift; sourceTree = "<group>"; };
 		BD94981FB01E4BA8ACB1C4E9D343230F /* PTSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PTSwift-dummy.m"; sourceTree = "<group>"; };
 		C60CC787F282674E9B99B9238099B3FF /* Array.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		C82CAC3A16A139DB2F8CEC2B30B17D56 /* Date.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				0DAF6EA8C318819E7DDB35E7CE4D0113 /* RegularExpression.swift */,
-				B79236A4D19C846F158E3CBB30145397 /* RegularExpressionPattern.swift */,
 			);
 			path = RegularExpression;
 			sourceTree = "<group>";
@@ -479,7 +476,6 @@
 				3A1825193DE10119CC1766A5570C7D33 /* Int.swift in Sources */,
 				963B3434E9B9994398ADF6E51DEAC615 /* PTSwift-dummy.m in Sources */,
 				FD3E522D36095710AA6B68CFEC9FA2C4 /* RegularExpression.swift in Sources */,
-				AAE40A2CF2E6D8BB3EFAA064BA5351BB /* RegularExpressionPattern.swift in Sources */,
 				CBCF53F47360B23979535E85A497108B /* String.swift in Sources */,
 				7071FB1427792FA800D7A5EE /* CLI.swift in Sources */,
 				BD76EE34DF58BF2E2D60C93DE1686D53 /* ToString.swift in Sources */,

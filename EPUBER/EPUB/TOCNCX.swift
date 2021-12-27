@@ -61,6 +61,8 @@ class TOCNCX {
         let tocNCX = XML(url: url)!
         let newTOCNCX = copyXMLWithoutChildren(original: tocNCX)
         
+        newTOCNCX.attributesOrder = ["version", "xmlns", "xml:lang"]
+        
         let head = tocNCX.head.tryGetXML()
         head.addEmptyLineAtBottom = true
         head.children.forEach { meta in

@@ -51,9 +51,13 @@ if !FM.itemExist(atURL: epubURL) {
 
 var dstFolder: URL?
 if dstFolderURLString.count > 0 {
-    dstFolder = URL(fileURLWithPath: dstFolderURLString)
-    if !FM.itemExist(atURL: epubURL, type: .folder) {
+    let folder = URL(fileURLWithPath: dstFolderURLString)
+    
+    if !FM.itemExist(atURL: folder, type: .folder) {
         CLI.exit(with: "输入非法: " + dstFolderURLString + " 不存在, 或者不是文件夹")
+    }
+    else {
+        dstFolder = folder
     }
 }
 
