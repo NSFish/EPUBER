@@ -57,11 +57,11 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "&quot;/Users/nsfish/Documents/Github/EPUBER/Test Case/&#x8be1;&#x79d8;&#x4e4b;&#x4e3b;.epub&quot;"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "&quot;/Users/nsfish/Documents/Github/EPUBER/Test Case/&#x661f;&#x7167;&#x4e0d;&#x5ba3;.epub&quot;"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "&quot;/Users/nsfish/Documents/Github/EPUBER/Test Case/&#x7f51;&#x6e38;&#x4e4b;&#x8fd1;&#x6218;&#x6cd5;&#x5e08;.epub&quot;"
@@ -97,11 +97,11 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "-option"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "dry-run"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
    </LaunchAction>

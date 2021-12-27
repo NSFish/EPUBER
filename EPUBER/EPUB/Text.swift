@@ -66,62 +66,62 @@ private extension Text {
         isVolumn = content.matches(with: regex).filter( { $0.value.count > 0 && $0.value.count < 10 }).count > 0
         
         // css 文件位置
-        regex = RE(#"<link rel="stylesheet"[\s\S]*css"/>"#)
+        regex = #"<link rel="stylesheet"[\s\S]*css"/>"#
         let css = #"<link rel="stylesheet" href=""# + cssFilePosition + #"" type="text/css"/>"#
         content = content.replacingMatches(of: regex, with: css)
         
         // 清除内置 css 规则
-        regex = RE(#"[\s]{0,2}<style[\s\S]*/style>"#)
+        regex = #"[\s]{0,2}<style[\s\S]*/style>"#
         content = content.replacingMatches(of: regex, with: "")
 
         // 统一标题 h2 样式
-        regex = RE("<h2.*?>(<span.*?>)*")
+        regex = "<h2.*?>(<span.*?>)*"
         content = content.replacingMatches(of: regex, with: #"<h2><span class="title-bottom-line">"#)
         
-        regex = RE(#"</.*h2>"#)
+        regex = #"</.*h2>"#
         content = content.replacingMatches(of: regex, with: "</span></h2>")
         
         // 将”第N卷““第N部”的样式和“第N章”区分开
         if isVolumn {
-            regex = RE(#"<h2.*?>(<span.*?>)*(?=(第[\S]*(卷|部)))"#)
+            regex = #"<h2.*?>(<span.*?>)*(?=(第[\S]*(卷|部)))"#
             content = content.replacingMatches(of: regex, with: #"<h2 class="volumn-title">"#)
 
-            regex = RE("</.*h2>")
+            regex = "</.*h2>"
             content = content.replacingMatches(of: regex, with: "</h2>")
         }
         
         // 移除 p 的样式和可能存在的空格
-        regex = RE(#"<p.*?>[\s]*"#)
+        regex = #"<p.*?>[\s]*"#
         content = content.replacingMatches(of: regex, with: "<p>")
         
         // 移除 div 的样式
-        regex = RE("<div.*?>")
+        regex = "<div.*?>"
         content = content.replacingMatches(of: regex, with: "<div>")
         
         // 移除 body 的样式
         if !isVolumn {
-            regex = RE("<body.*?>")
+            regex = "<body.*?>"
             content = content.replacingMatches(of: regex, with: "<body>")
         }
         
         // 移除 h1 (目前见到的是将卷名加到章节里)
-        regex = RE("<h1.*</h1>\n")
+        regex = "<h1.*</h1>\n"
         content = content.replacingMatches(of: regex, with: "")
         
         // 提取卷/部名或章节名供后续 toc.ncx 处使用
         var title = ""
         if isVolumn {
-            regex = RE("(?<=(<title>)).*?(?=(</))")
+            regex = "(?<=(<title>)).*?(?=(</))"
             let match = content.firstMatch(with: regex)
             title = match?.value ?? ""
         }
         else {
-            regex = RE(#"(?<=(">)).*?(?=(</))"#)
+            regex = #"(?<=(">)).*?(?=(</))"#
             let match = content.firstMatch(with: regex)
             title = match?.value ?? ""
             
             // 统一 title
-            regex = RE(#"(?<=<title>)[\s\S]*(?=</title>)"#)
+            regex = #"(?<=<title>)[\s\S]*(?=</title>)"#
             content = content.replacingMatches(of: regex, with: title)
         }
         
@@ -149,10 +149,10 @@ private extension Text {
                 volumns.append(volumn)
             }
             
-            if let match = title.firstMatch(with: RE(#"第\S*(卷|部)(\s.+)*"#)), match.value == title {
+            if let match = title.firstMatch(with: #"第\S*(卷|部)(\s.+)*"#), match.value == title {
                 createVolumn()
             }
-            else if let match = title.firstMatch(with: RE(#"番外(\s.+)*"#)), match.value == title {
+            else if let match = title.firstMatch(with: #"番外(\s.+)*"#), match.value == title {
                 createVolumn()
             }
         }

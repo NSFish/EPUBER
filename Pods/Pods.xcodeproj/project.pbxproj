@@ -12,6 +12,7 @@
 		3A1825193DE10119CC1766A5570C7D33 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9498C358619F6698FBF417678E5B38EA /* Int.swift */; };
 		4EE4FB99C89F05EE995AB0759028247C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A39408E02132BD8E49A81F6BD6EED0 /* Utils.swift */; };
 		7071FB1427792FA800D7A5EE /* CLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7071FB1327792FA800D7A5EE /* CLI.swift */; };
+		7071FB16277974D000D7A5EE /* PTRegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7071FB15277974D000D7A5EE /* PTRegularExpression.swift */; };
 		963B3434E9B9994398ADF6E51DEAC615 /* PTSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD94981FB01E4BA8ACB1C4E9D343230F /* PTSwift-dummy.m */; };
 		9C875886765E5932E578B0B30C51AA47 /* SwiftyXML-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5E96D66B02242896BD48109C591AB1 /* SwiftyXML-dummy.m */; };
 		A54351006016254E8464E1AF9542C1F5 /* Pods-EPUBER-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 42229EB9FDC727088F155FE009F9A76A /* Pods-EPUBER-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -65,6 +66,7 @@
 		5EEF2B2A8DD4009B1045939550CC4AE4 /* PTSwift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = PTSwift.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6DCADCE2A8F225BEB1ED8BDFECBB1B39 /* Pods-EPUBER-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EPUBER-dummy.m"; sourceTree = "<group>"; };
 		7071FB1327792FA800D7A5EE /* CLI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CLI.swift; path = Sources/PTSwift/CLI.swift; sourceTree = "<group>"; };
+		7071FB15277974D000D7A5EE /* PTRegularExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRegularExpression.swift; sourceTree = "<group>"; };
 		7193520C934D5F238BB227F62134AC98 /* SwiftyXML.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyXML.modulemap; sourceTree = "<group>"; };
 		75296CC31962A42C7BB222103582152A /* Enum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Sources/PTSwift/Enum.swift; sourceTree = "<group>"; };
 		8D748A56150B3638E073E17192148A44 /* SwiftyXML-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyXML-umbrella.h"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		9F5AB38FAD9BF5CD728C480085D9C438 /* RegularExpression */ = {
 			isa = PBXGroup;
 			children = (
+				7071FB15277974D000D7A5EE /* PTRegularExpression.swift */,
 				0DAF6EA8C318819E7DDB35E7CE4D0113 /* RegularExpression.swift */,
 			);
 			path = RegularExpression;
@@ -476,6 +479,7 @@
 				3A1825193DE10119CC1766A5570C7D33 /* Int.swift in Sources */,
 				963B3434E9B9994398ADF6E51DEAC615 /* PTSwift-dummy.m in Sources */,
 				FD3E522D36095710AA6B68CFEC9FA2C4 /* RegularExpression.swift in Sources */,
+				7071FB16277974D000D7A5EE /* PTRegularExpression.swift in Sources */,
 				CBCF53F47360B23979535E85A497108B /* String.swift in Sources */,
 				7071FB1427792FA800D7A5EE /* CLI.swift in Sources */,
 				BD76EE34DF58BF2E2D60C93DE1686D53 /* ToString.swift in Sources */,
