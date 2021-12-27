@@ -21,7 +21,7 @@ class ManifestItem {
     }
     
     func toXML() -> XML {
-        let xml = XML.init(name: "item", attributes: ["id": id, "href": href, "media-type": mediaType], value: nil)
+        let xml = XML(name: "item", attributes: ["id": id, "href": href, "media-type": mediaType], value: nil)
         xml.attributesOrder = ["id", "href", "media-type"]
         
         return xml
@@ -39,7 +39,7 @@ class SpineItemRef {
     }
     
     func toXML() -> XML {
-        let xml = XML.init(name: "itemref", attributes: ["idref": idref, "linear": linear], value: nil)
+        let xml = XML(name: "itemref", attributes: ["idref": idref, "linear": linear], value: nil)
         xml.attributesOrder = ["idref", "linear"]
         
         return xml
@@ -65,7 +65,7 @@ class ContentOPF {
         self.imageURLs = imageURLs
         self.chapterFileURLs = chapterFileURLs
         
-        xml = XML.init(url: url)!
+        xml = XML(url: url)!
     }
     
     func polish() {
@@ -106,18 +106,18 @@ private extension ContentOPF {
         let newManifestXML = copyXMLWithoutChildren(original: manifestXML)
         newXML.addChild(newManifestXML)
         
-        let tocItem = ManifestItem.init(id: "ncxtoc", href: self.tocNCXFileName, mediaType: "application/x-dtbncx+xml")
+        let tocItem = ManifestItem(id: "ncxtoc", href: self.tocNCXFileName, mediaType: "application/x-dtbncx+xml")
         newManifestXML.addChild(tocItem.toXML())
 
-        let cssItem = ManifestItem.init(id: "css", href: self.cssFileName, mediaType: "text/css")
+        let cssItem = ManifestItem(id: "css", href: self.cssFileName, mediaType: "text/css")
         newManifestXML.addChild(cssItem.toXML())
 
-        let coverImageItem = ManifestItem.init(id: "cover-image", href: self.coverFileName, mediaType: "image/jpeg")
+        let coverImageItem = ManifestItem(id: "cover-image", href: self.coverFileName, mediaType: "image/jpeg")
         newManifestXML.addChild(coverImageItem.toXML())
         
         for imageURL in imageURLs {
             let fileName = imageURL.lastPathComponent
-            let imageItem = ManifestItem.init(id: fileName, href: "Image/" + fileName, mediaType: "image/jpeg")
+            let imageItem = ManifestItem(id: fileName, href: "Image/" + fileName, mediaType: "image/jpeg")
 
             newManifestXML.addChild(imageItem.toXML())
         }
@@ -126,7 +126,7 @@ private extension ContentOPF {
         for (index, chapterFileURL) in chapterFileURLs.enumerated() {
             let id = idFrom(chapterIndex: index, digits: digits)
             let href = chapterFileURL.deletingLastPathComponent().lastPathComponent + "/" + chapterFileURL.lastPathComponent
-            let chapterItem = ManifestItem.init(id: id, href: href, mediaType: "application/xhtml+xml")
+            let chapterItem = ManifestItem(id: id, href: href, mediaType: "application/xhtml+xml")
             
             newManifestXML.addChild(chapterItem.toXML())
         }
@@ -138,13 +138,13 @@ private extension ContentOPF {
         newSpineXML.attributes["toc"] = "ncxtoc"
         newXML.addChild(newSpineXML)
         
-        let coverItemRef = SpineItemRef.init(idref: "cover", linear: "no")
+        let coverItemRef = SpineItemRef(idref: "cover", linear: "no")
         newSpineXML.addChild(coverItemRef.toXML())
 
         let digits = String(chapterFileURLs.count).count
         for (index, _) in chapterFileURLs.enumerated() {
             let id = idFrom(chapterIndex: index, digits: digits)
-            let chapterItemRef = SpineItemRef.init(idref: id, linear: "yes")
+            let chapterItemRef = SpineItemRef(idref: id, linear: "yes")
             
             newSpineXML.addChild(chapterItemRef.toXML())
         }

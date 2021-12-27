@@ -11,7 +11,7 @@ import PTSwift
 func decompress(fileURL: URL, into folder: URL) {
     let task = Process()
     task.currentDirectoryURL = folder
-    task.executableURL = URL.init(fileURLWithPath: "/Users/nsfish/Documents/Github/PersonalScripts/unar")
+    task.executableURL = URL(fileURLWithPath: "/Users/nsfish/Documents/Github/PersonalScripts/unar")
     // unar
     // -force-directory (-d)                   Always create a containing directory for the contents of the unpacked archive. By default, a directory is created if there is more than one top-level file or folder.
     // 即使解压出来的内容只有一个文件，也创建文件夹

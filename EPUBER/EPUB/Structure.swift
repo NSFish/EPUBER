@@ -53,8 +53,8 @@ class Structure {
         createTempEpubFolder(in: tempFolderURL)
     }
     
-    func generate(shouldZipUp: Bool = true) {
-        let dstFolder = epubURL.deletingLastPathComponent()
+    func generate(shouldZipUp: Bool = true, to folder: URL? = nil) {
+        let dstFolder = folder ?? epubURL.deletingLastPathComponent()
         let newFileName = "new_" + epubNameWithoutExtension
         
         if shouldZipUp {
@@ -62,7 +62,11 @@ class Structure {
             zip(contents, fileName: newFileName + ".epub", into: dstFolder)
         }
         else {
-            try! FM.copyItem(at: tempEpubFolderURL, to: dstFolder.appendingPathComponent(newFileName))
+            let dstURL = dstFolder.appendingPathComponent(newFileName)
+            if FM.itemExist(atURL: dstURL) {
+                try! FM.removeItem(at: dstURL)
+            }
+            try! FM.copyItem(at: tempEpubFolderURL, to: dstURL)
         }
         
         try! FM.removeItem(at: tempFolderURL)

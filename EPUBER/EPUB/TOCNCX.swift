@@ -25,18 +25,18 @@ class NavPoint {
     }
     
     func toXML() -> XML {
-        let navPoint = XML.init(name: "navPoint", attributes: ["id": id, "playOrder": String(playOrder)])
+        let navPoint = XML(name: "navPoint", attributes: ["id": id, "playOrder": String(playOrder)])
         navPoint.attributesOrder = ["id", "playOrder"]
         
-        let navLabel = XML.init(name: "navLabel")
+        let navLabel = XML(name: "navLabel")
         navLabel.childrenAtTheSameLine = true
         navPoint.addChild(navLabel)
         
-        let text = XML.init(name: "text", value: navLabelText)
+        let text = XML(name: "text", value: navLabelText)
         text.childrenAtTheSameLine = true
         navLabel.addChild(text)
         
-        let content = XML.init(name: "content", attributes: ["src": contentSrc])
+        let content = XML(name: "content", attributes: ["src": contentSrc])
         navPoint.addChild(content)
         
         subPoints.forEach { subPoint in
@@ -58,7 +58,7 @@ class TOCNCX {
     }
     
     func polish() {
-        let tocNCX = XML.init(url: url)!
+        let tocNCX = XML(url: url)!
         let newTOCNCX = copyXMLWithoutChildren(original: tocNCX)
         
         let head = tocNCX.head.tryGetXML()
@@ -101,7 +101,7 @@ extension TOCNCX {
         
         // 如果有多卷，则分层处理，但 playOrder 是连续的
         volumns.forEach { volumn in
-            let volumnPoint = NavPoint.init(id: "volumn_" + volumn.fileURL!.nameWithoutExtension(),
+            let volumnPoint = NavPoint(id: "volumn_" + volumn.fileURL!.nameWithoutExtension(),
                                             playOrder: calculate(&playOrder),
                                             navLabelText: volumn.title,
                                             contentSrc: "Text/" + volumn.fileURL!.lastPathComponent)
@@ -116,7 +116,7 @@ extension TOCNCX {
     }
     
     func navPoint(from chapter: Chapter, playOrder: inout Int) -> NavPoint {
-        return NavPoint.init(id: "chapter_" + chapter.fileURL.nameWithoutExtension(),
+        return NavPoint(id: "chapter_" + chapter.fileURL.nameWithoutExtension(),
                              playOrder: calculate(&playOrder),
                              navLabelText: chapter.title,
                              contentSrc: "Text/" + chapter.fileURL.lastPathComponent)
