@@ -41,12 +41,7 @@ class Text {
     }
     
     func polish() {
-        var chapters = [Chapter]()
-        
-        chapterFileURLs.forEach {
-            chapters.append(polishChapter(at: $0))
-        }
-        
+        let chapters = chapterFileURLs.map { polishChapter(at: $0) }
         organizeChaptersIntoVolumes(chapters)
     }
 }
