@@ -43,13 +43,14 @@ class Text {
     func polish() {
         let chapters = chapterFileURLs.map { polishChapter(at: $0) }
         organizeChaptersIntoVolumes(chapters)
+        generate()
     }
 }
 
 private extension Text {
     
     func polishChapter(at url: URL) -> Chapter {
-        var content = try! String(contentsOf: url).replacingOccurrences(of: "\r\n", with: "\n")
+        var content = try! String(contentsOf: url).replacingOccurrences(of: "\r\n", with: String.endOfLine)
         
         // ”第N卷““第N部”的样式需要和“第N章”区分开
         var isVolumn = false
@@ -124,6 +125,8 @@ private extension Text {
         
         return Chapter(title: title, fileURL: url)
     }
+
+    func generate() {}
     
     /// 将混在一起的卷和章节拆分开来
     func organizeChaptersIntoVolumes(_ chapters: [Chapter]) {
