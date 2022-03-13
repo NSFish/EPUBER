@@ -8,14 +8,14 @@ let package = Package(
     .macOS(.v10_15)
     ],
     dependencies: [
-//        .package(url: "https://github.com/NSFish/SwiftyXML", from: "3.0.2"),
-        .package(path: "../SwiftyXML"),
-        .package(path: "../PTSwift")
+        .package(url: "https://github.com/NSFish/SwiftyXML.git", .branch("nsfish")),
+        .package(path: "../PTSwift"),
+        .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "1.7.4"),
     ],
     targets: [
         .target(
             name: "EPUBER",
-            dependencies: ["PTSwift", "SwiftyXML"]),
+            dependencies: ["PTSwift", "SwiftyXML", "SwiftSoup"]),
         .testTarget(
             name: "EPUBERTests",
             dependencies: ["EPUBER"]),

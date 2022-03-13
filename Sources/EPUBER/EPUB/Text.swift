@@ -7,6 +7,7 @@
 
 import Foundation
 import PTSwift
+import SwiftSoup
 
 class Chapter {
     
@@ -41,13 +42,46 @@ class Text {
     }
     
     func polish() {
-        let chapters = chapterFileURLs.map { polishChapter(at: $0) }
+        let chapters = chapterFileURLs.map { try! polishChapterWithSwiftSoup(at: $0) }
         organizeChaptersIntoVolumes(chapters)
-        generate()
     }
 }
 
 private extension Text {
+    
+    func polishChapterWithSwiftSoup(at url: URL) throws -> Chapter {
+        var content = try String(contentsOf: url).replacingOccurrences(of: "\r\n", with: String.endOfLine)
+        let doc: Document = try SwiftSoup.parse(content)
+        
+        // 移除包括内嵌 css 在内的一切内容
+        // 只需要 meta 和 css
+        let head = doc.head()!
+        try head.removeAllChildren()
+        try head.append(#"<meta http-equiv="Content-Type" content="text/html; charset=utf-8">"#)
+        try head.append(#"<link rel="stylesheet" href=""# + cssFilePosition + #"" type="text/css"/>"#)
+
+        // 移除所有样式
+        let body = doc.body()!
+        let elements = try body.getAllElements()
+        try elements.forEach { try $0.removeAllAttributes() }
+        
+        var title = ""
+        if let h2 = try body.getElementsByTag("h2").first() {
+            title = try h2.text()
+            try h2.removeAllChildren()
+            try h2.append(#"<span class="title-bottom-line">"# + title)
+        }
+        
+        // 提取卷/部名或章节名供后续 toc.ncx 处使用
+        if !title.isEmpty {
+            try doc.title(title)
+        }
+        
+        content = try! doc.html()
+        try content.write(to: url, atomically: false, encoding: .utf8)
+        
+        return Chapter(title: title, fileURL: url)
+    }
     
     func polishChapter(at url: URL) -> Chapter {
         var content = try! String(contentsOf: url).replacingOccurrences(of: "\r\n", with: String.endOfLine)
@@ -62,7 +96,7 @@ private extension Text {
         isVolumn = content.matches(with: regex).filter( { $0.value.count > 0 && $0.value.count < 10 }).count > 0
         
         // css 文件位置
-        regex = #"<link rel="stylesheet"[\s\S]*css"/>"#
+        regex = #"<link [\s\S]*css"/>"#
         let css = #"<link rel="stylesheet" href=""# + cssFilePosition + #"" type="text/css"/>"#
         content = content.replacingMatches(of: regex, with: css)
         
@@ -125,8 +159,6 @@ private extension Text {
         
         return Chapter(title: title, fileURL: url)
     }
-
-    func generate() {}
     
     /// 将混在一起的卷和章节拆分开来
     func organizeChaptersIntoVolumes(_ chapters: [Chapter]) {
