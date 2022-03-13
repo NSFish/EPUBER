@@ -30,3 +30,41 @@ p {
     line-height: 125%;
     text-align: right;
 }
+
+
+/* ————————多看、Kindle弹窗注释—————————— */
+
+.duokan-footnote {
+    line-height: 1;
+    height: 1em!important;
+    width: auto;
+    border: 0;
+}
+
+.duokan-footnote-content {
+    border: 1px dashed #66BBCC;
+    /*box-shadow: 10px 10px 5px #AAAAAA;
+    */
+    clear: both;
+    margin: 1em 1em 0.5em 2em;
+    padding: 5px !important;
+    text-align: justify;
+}
+
+.duokan-footnote-item {
+    margin: 0.3em 0 0.3em 0;
+    duokan-text-indent: 0em;
+    text-indent: 0em;
+    font-family: "DK-CODE", "DK-XIHEITI", 细黑体, "xihei", sans-serif;
+    font-size: 80%;
+    text-align: left;
+}
+
+sup img {
+    line-height: 1.2;
+    width: 0.85em;
+    height: 0.85em;
+    margin: 0;
+    padding: 0em;
+    vertical-align: text-top;
+}

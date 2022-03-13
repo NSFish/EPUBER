@@ -40,7 +40,7 @@ let cssFileURL = URL(fileURLWithPath: cssFileURLString)
 if !FM.exist(at: cssFileURL, type: .file) {
     CLI.exit(with: "指定的文件 " + cssFileURLString + " 不存在")
 }
-else if cssFileURL.pathExtension.lowercased() != "css" {
+else if cssFileURL.lowercasedExtension() != "css" {
     CLI.exit(with: "指定的文件 " + cssFileURLString + " 扩展名非法")
 }
 

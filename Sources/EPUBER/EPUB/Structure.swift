@@ -43,7 +43,7 @@ class Structure {
         
         epubFolderURL = tempFolderURL.appendingPathComponent(epubNameWithoutExtension)
         // 如果传入的是 .epub 文件，则将 epub 文件解压到临时文件夹中
-        if epubURL.pathExtension.lowercased() == "epub" {
+        if epubURL.lowercasedExtension() == "epub" {
             decompress(fileURL: epubURL, into: tempFolderURL)
         }
         else { // 如果传入的直接就是一个文件夹，则
@@ -110,12 +110,12 @@ private extension Structure {
         FM.copyItem(at: cssFileURL, toFolder: OEBPSFolderURL)
         
         // content.opf、toc.ncx
-        guard let contentOPFURL = contents.filter({ $0.pathExtension.lowercased() == "opf" }).first else {
+        guard let contentOPFURL = contents.filter({ $0.lowercasedExtension() == "opf" }).first else {
             return
         }
         self.contentOPFURL = FM.copyItem(at: contentOPFURL, toFolder: OEBPSFolderURL)
         
-        guard let tocNCXURL = contents.filter({ $0.pathExtension.lowercased() == "ncx" }).first else {
+        guard let tocNCXURL = contents.filter({ $0.lowercasedExtension() == "ncx" }).first else {
             return
         }
         self.tocNCXURL = FM.copyItem(at: tocNCXURL, toFolder: OEBPSFolderURL)
@@ -124,7 +124,10 @@ private extension Structure {
         let imageFolder = OEBPSFolderURL.appendingPathComponent("Image")
         FM.createFolder(at: imageFolder)
         
-        let imageURLs = contents.filter { $0.pathExtension.lowercased() == "jpg" || $0.pathExtension.lowercased() == "jpeg" }
+        let imageURLs = contents.filter { $0.lowercasedExtension() == "jpg"
+            || $0.lowercasedExtension() == "jpeg"
+            || $0.lowercasedExtension() == "png"
+        }
         self.imageURLs = imageURLs.filter { !$0.nameWithoutExtension().lowercased().contains("cover") }
         self.imageURLs = FM.copy(items: self.imageURLs, toFolder: imageFolder)
         
@@ -139,7 +142,7 @@ private extension Structure {
         FM.createFolder(at: textFolder)
         
         // 章节文件扩展名可能是 .html 或 .xhtml，所以这里用 contains
-        let chapters = contents.filter( { $0.pathExtension.lowercased().contains("html") })
+        let chapters = contents.filter( { $0.lowercasedExtension().contains("html") })
             .sorted(by: { lhs, rhs in
                 var set = CharacterSet()
                 set.formUnion(.decimalDigits)

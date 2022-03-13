@@ -59,15 +59,21 @@ private extension Text {
         try head.removeAllChildren()
         try head.append(#"<meta http-equiv="Content-Type" content="text/html; charset=utf-8">"#)
         try head.append(#"<link rel="stylesheet" href=""# + cssFilePosition + #"" type="text/css"/>"#)
-
+        
         // 移除所有样式
         let body = doc.body()!
-        let elements = try body.getAllElements()
+        let elements = try body.getAllElements().filter { try $0.tagName() != "a"
+            && $0.tagName() != "img"
+            && $0.tagName() != "ol"
+            && $0.tagName() != "li"
+            && $0.attr("style") != "page-break-after:always;"
+        }
         try elements.forEach { try $0.removeAllAttributes() }
         
         var title = ""
         if let h2 = try body.getElementsByTag("h2").first() {
             title = try h2.text()
+            
             try h2.removeAllChildren()
             try h2.append(#"<span class="title-bottom-line">"# + title)
         }
@@ -103,7 +109,7 @@ private extension Text {
         // 清除内置 css 规则
         regex = #"[\s]{0,2}<style[\s\S]*/style>"#
         content = content.replacingMatches(of: regex, with: "")
-
+        
         // 统一标题 h2 样式
         regex = "<h2.*?>(<span.*?>)*"
         content = content.replacingMatches(of: regex, with: #"<h2><span class="title-bottom-line">"#)
@@ -115,7 +121,7 @@ private extension Text {
         if isVolumn {
             regex = #"<h2.*?>(<span.*?>)*(?=(第[\S]*(卷|部)))"#
             content = content.replacingMatches(of: regex, with: #"<h2 class="volumn-title">"#)
-
+            
             regex = "</.*h2>"
             content = content.replacingMatches(of: regex, with: "</h2>")
         }
