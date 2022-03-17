@@ -31,6 +31,13 @@ p {
     text-align: right;
 }
 
+blockquote {
+margin-bottom:1em;
+margin-top:1em;
+margin-left:0;
+margin-right:0;
+font-size:100%;
+}
 
 /* ————————多看、Kindle弹窗注释—————————— */
 
