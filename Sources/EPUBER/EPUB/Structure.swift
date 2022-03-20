@@ -113,13 +113,15 @@ private extension Structure {
         guard let contentOPFURL = contents.filter({ $0.lowercasedExtension() == "opf" }).first else {
             return
         }
-        self.contentOPFURL = FM.copyItem(at: contentOPFURL, toFolder: OEBPSFolderURL)
+        self.contentOPFURL = OEBPSFolderURL.appendingPathComponent("content.opf")
+        try! FM.copyItem(at: contentOPFURL, to: self.contentOPFURL)
         
         guard let tocNCXURL = contents.filter({ $0.lowercasedExtension() == "ncx" }).first else {
             return
         }
-        self.tocNCXURL = FM.copyItem(at: tocNCXURL, toFolder: OEBPSFolderURL)
-        
+        self.tocNCXURL = OEBPSFolderURL.appendingPathComponent("toc.ncx")
+        try! FM.copyItem(at: tocNCXURL, to: self.tocNCXURL)
+
         // 图片单独存入 Image/ 中
         let imageFolder = OEBPSFolderURL.appendingPathComponent("Image")
         FM.createFolder(at: imageFolder)
@@ -150,7 +152,7 @@ private extension Structure {
                 set.invert()
                 let left = lhs.nameWithoutExtension().removingCharacters(in: set).toDouble()!
                 let right = rhs.nameWithoutExtension().removingCharacters(in: set).toDouble()!
-                
+
                 return left < right
             })
         

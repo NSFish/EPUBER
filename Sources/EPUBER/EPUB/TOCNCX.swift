@@ -50,11 +50,11 @@ class NavPoint {
 class TOCNCX {
     
     let url: URL
-    let volumns: [Volumn]
+    let volumes: [Volume]
     
-    init(url: URL, volumns: [Volumn]) {
+    init(url: URL, volumes: [Volume]) {
         self.url = url
-        self.volumns = volumns
+        self.volumes = volumes
     }
     
     func polish() {
@@ -95,8 +95,8 @@ extension TOCNCX {
     func addNavPoints(to navMap: XML) {
         // 只有一卷，也就是不分卷，直接添加章节名即可
         var playOrder = 0
-        if volumns.count == 1 {
-            volumns.first!.chapters.forEach { chapter in
+        if volumes.count == 1 {
+            volumes.first!.chapters.forEach { chapter in
                 let chapterPoint = navPoint(from: chapter, playOrder: &playOrder)
                 navMap.addChild(chapterPoint.toXML())
             }
@@ -105,18 +105,18 @@ extension TOCNCX {
         }
         
         // 如果有多卷，则分层处理，但 playOrder 是连续的
-        volumns.forEach { volumn in
-            let volumnPoint = NavPoint(id: "volumn_" + volumn.fileURL!.nameWithoutExtension(),
+        volumes.forEach { volume in
+            let volumePoint = NavPoint(id: "volume_" + volume.fileURL!.nameWithoutExtension(),
                                             playOrder: calculate(&playOrder),
-                                            navLabelText: volumn.title,
-                                            contentSrc: "Text/" + volumn.fileURL!.lastPathComponent)
+                                            navLabelText: volume.title,
+                                            contentSrc: "Text/" + volume.fileURL!.lastPathComponent)
             
-            volumn.chapters.forEach { chapter in
+            volume.chapters.forEach { chapter in
                 let chapterPoint = navPoint(from: chapter, playOrder: &playOrder)
-                volumnPoint.subPoints.append(chapterPoint)
+                volumePoint.subPoints.append(chapterPoint)
             }
             
-            navMap.addChild(volumnPoint.toXML())
+            navMap.addChild(volumePoint.toXML())
         }
     }
     

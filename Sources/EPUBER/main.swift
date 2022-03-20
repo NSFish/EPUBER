@@ -69,7 +69,9 @@ if let option = Options(rawValue: optionString),
     shouldZipUp = false
 }
 
-let structure = Structure(epubURL: epubURL, cssFileURL: cssFileURL, ignoredFileNames: ignoredFileNames)
+let structure = Structure(epubURL: epubURL,
+                          cssFileURL: cssFileURL,
+                          ignoredFileNames: ignoredFileNames)
 structure.organize()
 
 let text = Text(cssFilePosition: structure.cssFilePosition,
@@ -84,7 +86,7 @@ let contentOPF = ContentOPF(url: structure.contentOPFURL,
                             chapterFileURLs: structure.chapterFileURLs)
 contentOPF.polish()
 
-let tocNCX = TOCNCX(url: structure.tocNCXURL, volumns: text.volumns)
+let tocNCX = TOCNCX(url: structure.tocNCXURL, volumes: text.volumes)
 tocNCX.polish()
 
 structure.generate(shouldZipUp: shouldZipUp, to: dstFolder)

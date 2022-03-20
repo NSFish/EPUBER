@@ -72,22 +72,26 @@ class ContentOPF {
         let newXML = copyXMLWithoutChildren(original: xml)
         let metadata = xml.metadata.tryGetXML()
         let metas = metadata.xmlChildren.filter { $0.xmlName == "meta" }
-        metas.forEach { meta in
-            meta.attributesOrder = ["name", "content"]
-            
-            // .opf 文件中确保封面正确显示有三个地方要注意
-            // 1. <head><meta name="cover" content="cover-image"></head>
-            // 2. <manifest><item id="cover-image" href="cover.jpg" media-type="image/jpeg"/></manifest>
-            // 3. <spine toc="ncxtoc"><itemref idref="cover" linear="no"/></spine>
-            //
-            // 做到这三者，才能保证
-            // 1. 封面在阅读器和 Finder 中正常显示
-            // 2. 封面在 Calibre 的元数据编辑器中正常显示
-            // 3. 封面在 Calibre 的书籍编辑器中正常显示
-            if meta.xmlAttributes["name"] == "cover" {
-                meta.xmlAttributes["content"] = "cover-image"
-            }
+        
+        // .opf 文件中确保封面正确显示有三个地方要注意
+        // 1. <head><meta name="cover" content="cover-image"></head>
+        // 2. <manifest><item id="cover-image" href="cover.jpg" media-type="image/jpeg"/></manifest>
+        // 3. <spine toc="ncxtoc"><itemref idref="cover" linear="no"/></spine>
+        //
+        // 做到这三者，才能保证
+        // 1. 封面在阅读器和 Finder 中正常显示
+        // 2. 封面在 Calibre 的元数据编辑器中正常显示
+        // 3. 封面在 Calibre 的书籍编辑器中正常显示
+        if let coverMeta = metas.filter({ $0.xmlAttributes["name"] == "cover" }).first {
+            coverMeta.xmlAttributes["content"] = "cover-image"
         }
+        else {
+            let coverMeta = XML(name: "meta", attributes: ["name": "cover", "content": "cover-image"], value: nil)
+            metadata.addChild(coverMeta)
+        }
+        
+        metas.forEach { $0.attributesOrder = ["name", "content"] }
+        
         newXML.addChild(metadata)
         
         polishManifest(in: newXML)
@@ -102,23 +106,30 @@ class ContentOPF {
 private extension ContentOPF {
     
     func polishManifest(in newXML: XML) {
+        let metadataXML = xml.metadata.tryGetXML()
+        metadataXML.xmlAttributes = ["xmlns:calibre": "http://calibre.kovidgoyal.net/2009/metadata",
+                                     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                     "xmlns:opf": "http://www.idpf.org/2007/opf",
+                                     "xmlns:dc": "http://purl.org/dc/elements/1.1/",
+                                     "xmlns:dcterms": "http://purl.org/dc/terms/"]
+        
         let manifestXML = xml.manifest.tryGetXML()
         let newManifestXML = copyXMLWithoutChildren(original: manifestXML)
         newXML.addChild(newManifestXML)
         
         let tocItem = ManifestItem(id: "ncxtoc", href: self.tocNCXFileName, mediaType: "application/x-dtbncx+xml")
         newManifestXML.addChild(tocItem.toXML())
-
+        
         let cssItem = ManifestItem(id: "css", href: self.cssFileName, mediaType: "text/css")
         newManifestXML.addChild(cssItem.toXML())
-
+        
         let coverImageItem = ManifestItem(id: "cover-image", href: self.coverFileName, mediaType: "image/jpeg")
         newManifestXML.addChild(coverImageItem.toXML())
         
         for imageURL in imageURLs {
             let fileName = imageURL.lastPathComponent
             let imageItem = ManifestItem(id: fileName, href: "Image/" + fileName, mediaType: "image/jpeg")
-
+            
             newManifestXML.addChild(imageItem.toXML())
         }
         
@@ -140,7 +151,7 @@ private extension ContentOPF {
         
         let coverItemRef = SpineItemRef(idref: "cover", linear: "no")
         newSpineXML.addChild(coverItemRef.toXML())
-
+        
         let digits = String(chapterFileURLs.count).count
         for (index, _) in chapterFileURLs.enumerated() {
             let id = idFrom(chapterIndex: index, digits: digits)

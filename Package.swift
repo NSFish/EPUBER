@@ -8,7 +8,8 @@ let package = Package(
     .macOS(.v10_15)
     ],
     dependencies: [
-        .package(url: "https://github.com/NSFish/SwiftyXML.git", .branch("nsfish")),
+//        .package(url: "https://github.com/NSFish/SwiftyXML.git", .branch("nsfish")),
+        .package(path: "../SwiftyXML"),
         .package(path: "../PTSwift"),
         .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "1.7.4"),
     ],

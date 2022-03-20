@@ -6,6 +6,24 @@ h2 {
     padding: 5px 0 15px 0;
 }
 
+h3 {
+    display: block;
+    font-size: 1.6em;
+    line-height: 110%;
+    text-align: justify;
+    margin: 0.05em 0 0.05em 0;
+    padding: 5px 0 15px 0;
+}
+
+h4 {
+    display: block;
+    font-size: 1.4em;
+    line-height: 110%;
+    text-align: justify;
+    margin: 0.05em 0 0.05em 0;
+    padding: 5px 0 15px 0;
+}
+
 p {
     display: block;
     font-size: 1.15em;
@@ -20,7 +38,7 @@ p {
     border-bottom: 1px solid;
 }
 
-.volumn-title {
+.volume-title {
     margin-top: 35%;
     border-style: none solid none none;
     border-width: 30px;
@@ -32,12 +50,26 @@ p {
 }
 
 blockquote {
-margin-bottom:1em;
-margin-top:1em;
-margin-left:0;
-margin-right:0;
-font-size:100%;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 100%;
 }
+
+
+/* ————————图片名称—————————— */
+
+.image-name {
+    display: block;
+    font-size: 1.2em;
+    line-height: 100%;
+    text-align: center;
+    text-indent: 0;
+    margin: 0.05em 0 0.5em 0;
+    padding: 0;
+}
+
 
 /* ————————多看、Kindle弹窗注释—————————— */
 
@@ -62,7 +94,6 @@ font-size:100%;
     margin: 0.3em 0 0.3em 0;
     duokan-text-indent: 0em;
     text-indent: 0em;
-    font-family: "DK-CODE", "DK-XIHEITI", 细黑体, "xihei", sans-serif;
     font-size: 80%;
     text-align: left;
 }
