@@ -128,7 +128,7 @@ private extension Text {
 //                                                       with: #"<h2><span class="title-bottom-line">"# + title + #"</span></h2>"#)
 //            }
             
-            content = try polishNotes(in: content)
+//            content = try polishNotes(in: content)
         }
 
         try content.write(to: url, atomically: false, encoding: .utf8)
