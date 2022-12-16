@@ -80,7 +80,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "&quot;/Users/nsfish/Downloads/a.epub&quot;"
+            argument = "&quot;/Users/nsfish/Downloads/a&quot;"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
